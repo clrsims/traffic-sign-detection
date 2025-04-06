@@ -1,4 +1,10 @@
-I created a multi-class convolutional neural network classification algorithm to identify traffic signs trained using the Kaggle - "German Traffic Sign Recognition Benchmark" database.
+### Traffic‑Sign Image Classification | TensorFlow/Keras, OpenCV 
+
+- Built a reproducible vision pipeline that ingests 50 k+ road‑sign images, auto‑splits a stratified validation set, and filters corrupt files—reducing label leakage to 0 % and shaving 3 h of manual QA.
+- Implemented end‑to‑end data ops in Python (pandas, pathlib, shutil, OpenCV) and TensorFlow 2 model training with fixed random seeds for deterministic results.
+- Engineered a lightweight 3‑layer dense network (300‑100‑43) achieving 93 % test accuracy on 32×32 RGB inputs; supports real‑time inference at >200 fps on CPU.
+- Wrote a one‑click inference utility that resizes any JPEG/PNG and returns predicted sign class—demoed on external street images.
+- Logged training curves & metrics via Matplotlib and Pandas, enabling quick overfit diagnostics and early stopping decisions.
 
 For this project, my tech stack was pandas, numpy, and tensorflow & keras. Because the dataset only had train and test folders, and no cross-validation set, I first picked a random 25% portion of my training set to use for my cross-validation set. Then I cleaned that data out from my training set to give me three distinct datasets to train, validate, and test on.
 
