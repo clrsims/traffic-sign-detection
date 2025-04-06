@@ -1,4 +1,4 @@
-### Traffic‑Sign Image Classification | TensorFlow/Keras, OpenCV 
+## Traffic‑Sign Image Classification | TensorFlow/Keras, OpenCV 
 
 - Built a reproducible vision pipeline that ingests 50 k+ road‑sign images, auto‑splits a stratified validation set, and filters corrupt files—reducing label leakage to 0 % and shaving 3 h of manual QA.
 - Implemented end‑to‑end data ops in Python (pandas, pathlib, shutil, OpenCV) and TensorFlow 2 model training with fixed random seeds for deterministic results.
