@@ -6,14 +6,13 @@
 - Wrote a one‑click inference utility that resizes any JPEG/PNG and returns predicted sign class—demoed on external street images.
 - Logged training curves & metrics via Matplotlib and Pandas, enabling quick overfit diagnostics and early stopping decisions.
 
-For this project, my tech stack was pandas, numpy, and tensorflow & keras. Because the dataset only had train and test folders, and no cross-validation set, I first picked a random 25% portion of my training set to use for my cross-validation set. Then I cleaned that data out from my training set to give me three distinct datasets to train, validate, and test on.
+## Dataset
 
-Then, I loaded and preprocessed the images, resizing to 32x32 and normalizing the pixel values. Then, I created the neural network: I first opted to flatten my input to a 1D array to feed into two hidden layers with ReLU activation function for non-linearity. Output layer function was softmax, apt for multi-class classification problems. For my loss function I used sparse categorical cross entropy and the standard gradient descent optimizer. I ran the first training session for 30 epochs. 
+The data used is from the **[German Traffic Sign Recognition Benchmark](https://www.kaggle.com/datasets/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign)** dataset on Kaggle. It includes:
 
-![image](https://github.com/clrsims/traffic-sign-detection/assets/166945525/eacb42d4-d269-4bbe-88e7-f5acab9b13f1)
+- 'train.csv' - image paths and labels for training
+- 'test.csv' - image paths and labels for evaluation
+- 'meta.csv' - class metadata (e.g. sign names, image references)
+- 'Train/' - image folders: 43 subfolders (0 to 42), each containing labeled .png images
+- 'internet_pictures/' - folder with external images for prediction demo
 
-As we can see, the val_accuracy increased and val_loss decreased substantially. However, they hadn't fully converged, so I ran the second training for 30 more epochs.
-
-![image](https://github.com/clrsims/traffic-sign-detection/assets/166945525/3083cd5b-9add-4013-8565-1afc2726085d)
-
-Now it looks much better. My validation accuracy was about 96%, so I decided to move to testing the accuracy on the test set and came back with ~87% accuracy score.
