@@ -2,7 +2,7 @@
 
 - Built a reproducible vision pipeline that ingests 50 k+ road‑sign images, auto‑splits a stratified validation set, and filters corrupt files—reducing label leakage to 0 % and shaving 3 h of manual QA.
 - Implemented end‑to‑end data ops in Python (pandas, pathlib, shutil, OpenCV) and TensorFlow 2 model training with fixed random seeds for deterministic results.
-- Engineered a lightweight 3‑layer dense network (300‑100‑43) achieving 93 % test accuracy on 32×32 RGB inputs; supports real‑time inference at >200 fps on CPU.
+- Engineered a lightweight 3‑layer dense network (300‑100‑43) achieving 87% test accuracy on 32×32 RGB inputs; supports real‑time inference at >200 fps on CPU.
 - Wrote a one‑click inference utility that resizes any JPEG/PNG and returns predicted sign class—demoed on external street images.
 - Logged training curves & metrics via Matplotlib and Pandas, enabling quick overfit diagnostics and early stopping decisions.
 
@@ -16,4 +16,4 @@ As we can see, the val_accuracy increased and val_loss decreased substantially. 
 
 ![image](https://github.com/clrsims/traffic-sign-detection/assets/166945525/3083cd5b-9add-4013-8565-1afc2726085d)
 
-Now it looks much better. My validation accuracy was about 96%, so I decided to move to testing the accuracy on the test set and came back with ~87% accuracy score. To improve my accuracy for my next project, I will iterate through learning rates and optimizers and find the one that returns the best accuracy score :)
+Now it looks much better. My validation accuracy was about 96%, so I decided to move to testing the accuracy on the test set and came back with ~87% accuracy score.
